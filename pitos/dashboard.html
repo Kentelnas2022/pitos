@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav>
+        <div class="plus-icon">+</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
+        <div class="burger-menu">&#9776;</div>
+        <div class="menu-content" id="menu">
+            <a href="savelist.html">Save list</a>
+            <a href="reglog.html">Logout</a>
+        </div>
+    </nav>
+
+    <div class="h1-container">
+        <h1>Dashboard</h1>
+        
+        <!-- Category and Sorting Options -->
+        <div class="filter-options">
+            <select id="categorySelect">
+                <option value="">All Categories</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Bakery">Bakery</option>
+                <option value="Crackers">Crackers</option>
+                <option value="Can goods">Can goods</option>
+            </select>
+            <select id="sortSelect">
+                <option value="default">Default</option>
+                <option value="priceLowToHigh">Price: Low to High</option>
+                <option value="priceHighToLow">Price: High to Low</option>
+                <option value="nameAtoZ">Name: A to Z</option>
+                <option value="nameZtoA">Name: Z to A</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Notification Message -->
+    <div id="notification" class="notification" style="display: none;"></div>
+
+    <!-- Product List -->
+    <div id="productList" class="product-list"></div>
+
+    <!-- Modal for Adding Product -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add Product Item</h2>
+            <form id="productForm">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" required>
+
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" required>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" required>
+
+                <label for="weight">Weight:</label>
+                <input type="text" id="weight" required>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" required>
+
+                <label for="store">Store:</label>
+                <input type="text" id="store" required>
+
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="">Select a category</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Vegetables">Vegetables</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Bakery">Bakery</option>
+                    <option value="Crackers">Crackers</option>
+                    <option value="Can goods">Can goods</option>
+                </select>
+
+                <label for="productImage">Product Image:</label>
+                <input type="file" id="productImage" accept="image/*" required>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
